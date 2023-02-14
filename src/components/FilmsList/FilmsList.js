@@ -9,11 +9,21 @@ export const FilmsList = ({ movies }) => {
       {movies.map(movie => (
         <CardWrapper key={movie.id}>
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-              width="300"
-            />
+            {movie.poster_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+                width="300"
+                height="300"
+              />
+            ) : (
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                alt={movie.title}
+                width="300"
+                height="300"
+              />
+            )}
             <ProductName>{movie.title}</ProductName>
           </Link>
         </CardWrapper>

@@ -23,11 +23,19 @@ const Cast = () => {
           {cast.map(actor => {
             return (
               <li key={actor.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
-                  alt={actor.name}
-                  width="150"
-                />
+                {actor.profile_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
+                    alt={actor.name}
+                    width="150"
+                  />
+                ) : (
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                    alt={actor.name}
+                    width="150"
+                  />
+                )}
                 <h3>{actor.name}</h3>
                 <p>Character: {actor.character}</p>
               </li>

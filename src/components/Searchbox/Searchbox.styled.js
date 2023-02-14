@@ -6,6 +6,7 @@ export const SearchForm = styled.form`
   width: 100%;
   max-width: 200px;
   overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 export const SearchFormButton = styled.button`
